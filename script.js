@@ -44,7 +44,7 @@ function calculateHeating() {
     wattageElement.innerText = `You will need approximately ${wattageRequired.toFixed(0)} watts for this room.`;
     recommendedSizeElement.innerText = `Recommended heating mat size: ${nearestMatSize} m².`;
     energyConsumptionElement.innerText = `Energy consumption for ${hours} hour(s): ${energyConsumption.toFixed(2)} kWh.`;
-    heatingCostElement.innerText = `Estimated heating cost for ${hours} hour(s): $${heatingCost.toFixed(2)}.`;
+    heatingCostElement.innerText = `Estimated heating cost for ${hours} hour(s): ${heatingCost.toFixed(2)}.`;
 
     // Show the result section
     resultElement.style.display = 'block';
