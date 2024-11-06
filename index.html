@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underfloor Heating Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- jsPDF Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Underfloor Heating Calculator</h1>
+
+        <div class="form-group">
+            <label for="length">Room Length (m):</label>
+            <input type="number" id="length" placeholder="Enter room length in meters" required>
+        </div>
+
+        <div class="form-group">
+            <label for="width">Room Width (m):</label>
+            <input type="number" id="width" placeholder="Enter room width in meters" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nonHeated">Non-heated Area (m²) (Optional):</label>
+            <input type="number" id="nonHeated" placeholder="Enter non-heated areas (Optional)">
+        </div>
+
+        <div class="form-group">
+            <label for="insulation">Insulation Quality:</label>
+            <select id="insulation">
+                <option value="100">Good (100W/m²)</option>
+                <option value="125">Average (125W/m²)</option>
+                <option value="150">Poor (150W/m²)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="hours">Heating Duration (hours):</label>
+            <input type="number" id="hours" placeholder="Enter heating duration in hours" required>
+        </div>
+
+        <div class="form-group">
+            <label for="electricityCost">Electricity Cost (per kWh):</label>
+            <input type="number" id="electricityCost" placeholder="Enter cost per kWh" required>
+        </div>
+
+        <button id="calculate" onclick="calculateHeating()">Calculate Heating Requirements</button>
+
+        <div id="result" class="result">
+            <h2>Heating Requirement:</h2>
+            <p id="wattage"></p>
+            <p id="recommendedSize"></p>
+            <p id="energyConsumption"></p>
+            <p id="heatingCost"></p>
+            <button id="generatePDF" onclick="generatePDF()" style="display:none;">Generate PDF</button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
